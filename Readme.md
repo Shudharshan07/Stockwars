@@ -1,4 +1,9 @@
-# StockWars
+<picture align="center">
+  <source media="(prefers-color-scheme: dark)" srcset=".github/stockwars_dark.png">
+  <img alt="Vision Max Logo" src=".github/stockwars_light.png">
+</picture>
+
+---
 
 StockWars is a real-time multiplayer stock trading simulation. Players compete in time-limited "wars" where they execute buy and sell orders against each other through a live order matching engine. Trades are matched in real time, and a leaderboard tracks each player's wealth throughout the competition.
 
