@@ -13,7 +13,6 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/joho/godotenv"
 	"github.com/redis/go-redis/v9"
 )
 
@@ -209,7 +208,7 @@ func SyncExistingWars(ctx context.Context, rdb *redis.Client) {
 }
 
 func main() {
-	err := godotenv.Load()
+	_, err := LoadEnv()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
