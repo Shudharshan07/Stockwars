@@ -6,10 +6,10 @@ import (
 	"strings"
 )
 
-func LoadEnv() (int, error) {
+func LoadEnv() int {
 	file, err := os.Open(".env")
 	if err != nil {
-		return 0, err
+		return 0
 	}
 	defer file.Close()
 
@@ -33,5 +33,5 @@ func LoadEnv() (int, error) {
 		}
 	}
 
-	return c, nil
+	return c
 }

@@ -5,7 +5,7 @@ import java.util.UUID;
 public class User {
     private UUID id;
     private String username;
-
+    
     public String getUsername() {
         return username;
     }

@@ -1,5 +1,3 @@
-import React from "react";
-
 export function StockWarsBanner() {
   return (
     <div className="relative bg-gradient-to-br from-zinc-900 to-zinc-950 rounded-t-2xl overflow-hidden border border-zinc-800 border-b-0 p-8">

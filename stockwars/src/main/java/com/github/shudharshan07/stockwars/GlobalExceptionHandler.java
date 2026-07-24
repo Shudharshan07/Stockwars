@@ -19,6 +19,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<String> handleRuntime(RuntimeException e) {
+        e.printStackTrace();
         return ResponseEntity.status(404).body(e.getMessage());
     }
 }

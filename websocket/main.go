@@ -208,10 +208,9 @@ func SyncExistingWars(ctx context.Context, rdb *redis.Client) {
 }
 
 func main() {
-	_, err := LoadEnv()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	n := LoadEnv()
+
+	log.Printf("Loaded %d ENVs", n)
 
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()

@@ -1,4 +1,26 @@
 services:
+  server:
+    build:
+      context: ./stockwars
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./stockwars/.env.production
+    depends_on:
+      - db
+      - cache
+
+  websocket:
+    build:
+      context: ./websocket
+      target: final
+    ports:
+      - 1024:1024
+    env_file:
+      - ./websocket/.env.production
+    depends_on:
+      - cache
+
   db:
     image: mysql:8.0
     container_name: stockwars_mysql
