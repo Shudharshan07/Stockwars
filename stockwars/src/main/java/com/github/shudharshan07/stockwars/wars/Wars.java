@@ -2,6 +2,9 @@ package com.github.shudharshan07.stockwars.wars;
 
 import com.github.shudharshan07.stockwars.auth.Users;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
@@ -10,7 +13,10 @@ import org.hibernate.type.SqlTypes;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Setter
+@Getter
 @Entity
+@NoArgsConstructor
 @Table(name = "wars")
 public class Wars {
 
@@ -38,56 +44,12 @@ public class Wars {
     @Column(name = "config", nullable = false)
     private WarConfig config;
 
-    public Wars()
-    {
-
-    }
-
     public Wars(WarConfig config)
     {
         this.warId = UUID.randomUUID();
         this.config = config;
     }
 
-    public UUID getWarId() {
-        return warId;
-    }
-
-    public void setWarId(UUID warId) {
-        this.warId = warId;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public WarConfig getConfig() {
-        return config;
-    }
-
-    public void setConfig(WarConfig config) {
-        this.config = config;
-    }
-
-    public String getWarCode() {
-        return warCode;
-    }
-
-    public void setWarCode(String warCode) {
-        this.warCode = warCode;
-    }
-
-    public Users getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(Users createdBy) {
-        this.createdBy = createdBy;
-    }
 }
 
 

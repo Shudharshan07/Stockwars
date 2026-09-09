@@ -2,10 +2,16 @@ package com.github.shudharshan07.stockwars.auth.refresh;
 
 import com.github.shudharshan07.stockwars.auth.Users;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.Instant;
 
+@Setter
+@Getter
 @Entity
+@NoArgsConstructor
 @Table(name = "refresh_tokens")
 public class RefreshToken {
     @Id
@@ -26,39 +32,4 @@ public class RefreshToken {
 
     @Column(nullable = false)
     private Instant expiryDate;
-
-    public RefreshToken() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Users getUser() {
-        return user;
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public Instant getExpiryDate() {
-        return expiryDate;
-    }
-
-    public void setExpiryDate(Instant expiryDate) {
-        this.expiryDate = expiryDate;
-    }
 }

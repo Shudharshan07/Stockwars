@@ -1,10 +1,14 @@
 package com.github.shudharshan07.stockwars.wars;
 
 import jakarta.validation.constraints.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Setter
+@Getter
 public class WarConfig {
     @DecimalMin(value = "0.0", inclusive = false, message = "Initial balance must be greater than 0")
     @DecimalMax(value = "1000000000.0", message = "Initial balance is too large")
@@ -55,59 +59,4 @@ public class WarConfig {
         this.maxOpenOrders = maxOpenOrders;
     }
 
-    public double getInitialBalance() {
-        return initialBalance;
-    }
-
-    public void setInitialBalance(double initialBalance) {
-        this.initialBalance = initialBalance;
-    }
-
-    public int getPriceTickMs() {
-        return priceTickMs;
-    }
-
-    public void setPriceTickMs(int priceTickMs) {
-        this.priceTickMs = priceTickMs;
-    }
-
-    public int getMinOrderSize() {
-        return minOrderSize;
-    }
-
-    public void setMinOrderSize(int minOrderSize) {
-        this.minOrderSize = minOrderSize;
-    }
-
-    public int getMaxOrderSize() {
-        return maxOrderSize;
-    }
-
-    public void setMaxOrderSize(int maxOrderSize) {
-        this.maxOrderSize = maxOrderSize;
-    }
-
-    public int getPricePrecision() {
-        return pricePrecision;
-    }
-
-    public void setPricePrecision(int pricePrecision) {
-        this.pricePrecision = pricePrecision;
-    }
-
-    public int getQuantityPrecision() {
-        return quantityPrecision;
-    }
-
-    public void setQuantityPrecision(int quantityPrecision) {
-        this.quantityPrecision = quantityPrecision;
-    }
-
-    public int getMaxOpenOrders() {
-        return maxOpenOrders;
-    }
-
-    public void setMaxOpenOrders(int maxOpenOrders) {
-        this.maxOpenOrders = maxOpenOrders;
-    }
 }

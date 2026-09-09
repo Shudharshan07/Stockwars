@@ -1,29 +1,16 @@
 package com.github.shudharshan07.stockwars.auth.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.UUID;
 
+
+@Setter
+@Getter
+@AllArgsConstructor
 public class User {
     private UUID id;
     private String username;
-    
-    public String getUsername() {
-        return username;
-    }
-
-    public User(UUID id, String username) {
-        this.id = id;
-        this.username = username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
 }
